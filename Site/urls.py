@@ -19,10 +19,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from Examen import views as Examen
+from Procesos import views as Procesos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Examen.index, name="index"),
-    path('areabosses/', include("areabosses.urls")),
-    
+    path('',Examen.index, name="index"),   
+    path('Solicitud_pieza/', Procesos.SPiezas.as_view(), name="solicitud_piezas"),
+    path('Registro_piezas/', Procesos.EntregaAlmacen.as_view(), name = "registros_piezas"),
+
 ]

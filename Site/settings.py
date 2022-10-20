@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Examen',
     'areabosses',
     'linebosses',
+    'Procesos',
 ]
 
 MIDDLEWARE = [

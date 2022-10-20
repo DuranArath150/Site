@@ -11,9 +11,3 @@ class LineBosses(models.Model):
 
     def __str__(self):
         return self.user.first_name
-
-
-@receiver(post_save, sender=User)
-def ensure_linebosses_exists(sender, instance, **kwargs):
-    if kwargs.get('created', False):
-        LineBosses.objects.get_or_create(user=instance)

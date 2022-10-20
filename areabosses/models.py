@@ -10,9 +10,3 @@ class AreaBosses(models.Model):
 
     def __str__(self):
         return self.user.first_name
-
-
-@receiver(post_save, sender=User)
-def ensure_areabosses_exists(sender, instance, **kwargs):
-    if kwargs.get('created', False):
-        AreaBosses.objects.get_or_create(user=instance)
