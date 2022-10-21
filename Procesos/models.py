@@ -32,8 +32,6 @@ class RegistroDeEntrega(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.BooleanField(default=True)
 
-
-
     def __str__(self):
         return self.user.first_name
 

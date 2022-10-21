@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from .models import SolicitudPiezas, RegistroDeEntrega
 from Procesos import views as P
+from django.contrib.auth.decorators import login_required
 from .forms import PiezasForm, RegistroForm, UpdateRegistroForm
 # Create your views here.
 
@@ -22,6 +23,7 @@ class EntregaAlmacen(generic.CreateView):
     model = RegistroDeEntrega
     form_class = RegistroForm
     success_url = reverse_lazy("registros_piezas")
+
 
 class UpdateEntregaAlmacen(generic.UpdateView):
     template_name = "Procesos/UpdateEntregaDeAlmacen.html"
