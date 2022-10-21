@@ -26,5 +26,6 @@ urlpatterns = [
     path('',Examen.index, name="index"),   
     path('Solicitud_pieza/', Procesos.SPiezas.as_view(), name="solicitud_piezas"),
     path('Registro_piezas/', Procesos.EntregaAlmacen.as_view(), name = "registros_piezas"),
+    path('UpdateRegistro_piezas/<int:pk>/', Procesos.UpdateEntregaAlmacen.as_view(), name='update_piezas'),
 
 ]

@@ -1,6 +1,6 @@
 from importlib.metadata import files
 from pyexpat import model
-from attr import fields
+from attr import field, fields
 from django import forms
 
 
@@ -15,4 +15,10 @@ class PiezasForm(forms.ModelForm):
 class RegistroForm(forms.ModelForm):
     class Meta:
         model = RegistroDeEntrega
-        fields = ["lineboss","piece","no_order"]
+        fields = "__all__"
+
+
+class UpdateRegistroForm(forms.ModelForm):
+    class Meta:
+        model = RegistroDeEntrega
+        fields = ["status"]
